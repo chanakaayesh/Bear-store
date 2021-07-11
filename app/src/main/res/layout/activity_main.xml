@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_page"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/transparent_background"
+    android:layout_height="match_parent"
+    android:onClick="HidePopup_interface"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar">
+        <TextView
+            android:background="@drawable/transparent_background"
+            android:textStyle="bold"
+            android:autoSizeTextType="uniform"
+            android:textAlignment="center"
+            android:text="Punk IPA"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <android.widget.SearchView
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="20dp"
+        android:id="@+id/searchView_bear"
+        android:background="@drawable/searchview_background"
+        android:queryHint="Search"
+        android:layout_width="match_parent"
+
+
+
+        android:layout_height="35dp">
+
+
+
+    </android.widget.SearchView>
+
+
+
+    <RelativeLayout
+        android:id="@+id/main_container"
+        android:layout_below="@+id/searchView_bear"
+        android:background="@drawable/dark_background"
+
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:onClick="HidePopup_interface"
+        >
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="21"
+            android:id="@+id/recycler_bear"
+            android:onClick="HidePopup_interface"
+
+            />
+
+
+
+
+        <ProgressBar
+            android:layout_below="@+id/recycler_bear"
+            android:id="@+id/progres_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+    <Space
+        android:layout_centerInParent="true"
+        android:id="@+id/Parent_Center_ids"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+
+        android:id="@+id/popUp"
+        android:layout_below="@+id/Parent_Center_ids"
+        android:visibility="gone"
+        android:layout_weight="1"
+        android:background="@drawable/circule"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+       <androidx.percentlayout.widget.PercentRelativeLayout
+           android:layout_marginTop="25dp"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_marginRight="@dimen/gap_betwean_item"
+           android:layout_marginLeft="@dimen/gap_betwean_item"
+           >
+           <ImageView
+               android:id="@+id/popUp_display_logo_image"
+               app:layout_widthPercent="10%"
+               app:layout_heightPercent="40%"
+               android:layout_width="0dp"
+               android:layout_height="0dp"
+            />
+
+           <TextView
+               android:id="@+id/popUp_display_bear_name"
+               android:layout_toRightOf="@+id/popUp_display_logo_image"
+               android:layout_toEndOf= "@+id/popUp_display_logo_image"
+               android:textColor="@color/white"
+               android:textStyle="bold"
+
+
+               android:layout_marginLeft="@dimen/gap_betwean_item"
+               app:layout_widthPercent="90%"
+               app:layout_heightPercent="10%"
+               android:layout_width="0dp"
+               android:layout_height="0dp"
+               />
+           <TextView
+
+               android:id="@+id/popUp_display_short_description"
+               android:layout_below="@+id/popUp_display_bear_name"
+               android:layout_toRightOf="@+id/popUp_display_logo_image"
+               android:layout_toEndOf= "@+id/popUp_display_logo_image"
+               android:textColor="#D0E4E0E0"
+               android:textStyle="bold"
+               android:textSize="13sp"
+
+               android:layout_marginLeft="@dimen/gap_betwean_item"
+               app:layout_widthPercent="90%"
+               app:layout_heightPercent="10%"
+               android:layout_width="0dp"
+               android:layout_height="0dp"
+             />
+           <TextView
+               android:id="@+id/popUp_display_long_description"
+               android:layout_below="@+id/popUp_display_short_description"
+               android:layout_toEndOf= "@+id/popUp_display_logo_image"
+               android:layout_toRightOf="@+id/popUp_display_logo_image"
+               android:textSize="13sp"
+               android:scrollbars="vertical"
+               android:layout_marginLeft="@dimen/gap_betwean_item"
+               android:layout_marginTop="@dimen/gap_betwean_item"
+               android:textColor="#D0E4E0E0"
+               app:layout_widthPercent="90%"
+               app:layout_heightPercent="70%"
+               android:layout_width="0dp"
+               android:layout_height="0dp"
+               />
+       </androidx.percentlayout.widget.PercentRelativeLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

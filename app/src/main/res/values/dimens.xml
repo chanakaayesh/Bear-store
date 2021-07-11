@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="b4_textsize">28sp</dimen>
+    <dimen name="b3_textsize">25sp</dimen>
+    <dimen name="b2_textsize">22sp</dimen>
+    <dimen name="b1_textsize">18sp</dimen>
+    <dimen name="layout_margin_gap">15dp</dimen>
+    <dimen name="textview_marging">5dp</dimen>
+    <dimen name="gap_betwean_item">15dp</dimen>
+    <dimen name="Recycler_gap_between_item">15dp</dimen>
+
+</resources>

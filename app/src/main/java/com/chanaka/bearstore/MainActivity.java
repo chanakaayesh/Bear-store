@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
+
             }
 
             @Override
@@ -116,22 +117,32 @@ public class MainActivity extends AppCompatActivity {
         //  closeButton.setEnabled(false);
         //  closeButton.setImageDrawable(null);
 
-        closeButton.setOnClickListener(new View.OnClickListener() {
+        closeButton.setVisibility(View.GONE);
+
+    /*    closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // bearList.clear();
+                //
+
+                bearList.clear();
+
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
 
-                get_bears();
-                refresh_recycler();
+             //   refresh_recycler();
                 searchView_bear.setQuery("", true);
                 searchView_bear.clearFocus();
                 adapter.notifyDataSetChanged();
-                bearList.clear();
+                refresh_recycler();
+                get_bears();
 
             }
         });
-
+*/
 
         //popUp RelativeLayout make untouch
         Parent_Center_id.setOnTouchListener(new View.OnTouchListener() {
@@ -147,6 +158,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         searchView_bear.setQueryHint("Search");
+
+
         searchView_bear.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -157,16 +170,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String query) {
 
-                if (searchView_bear.getQuery().length() == 0) {
+                search_bear_Name(query);
+                adapter.notifyDataSetChanged();
+                get_bears();
+
+             /*   if (searchView_bear.getQuery().length() == 0) {
                     //  get_bears();
-                    bearList.clear();
+                 //   bearList.clear();
+                  *//*  searchView_bear.setQuery("", true);
+                    searchView_bear.clearFocus();*//*
+                    adapter.notifyDataSetChanged();
                     Parent_Center_id.setVisibility(View.GONE);
+                    get_bears();
+                    refresh_recycler();
 
                 } else {
                     search_bear_Name(query);
-
-                    refresh_recycler();
-                }
+                    adapter.notifyDataSetChanged();
+                    get_bears();
+                }*/
 
 
                 //  search_bear(query);
